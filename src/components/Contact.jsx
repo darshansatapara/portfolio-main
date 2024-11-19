@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
+import { message } from "antd";
 import emailjs from "emailjs-com"; // Import EmailJS
 import config from "../config"; // Import config.js
 
@@ -54,6 +54,7 @@ const Contact = () => {
         .then(
           (result) => {
             setFormSubmitted(true); // Show success message
+            message.success("Your message has been successfully sent.");
             setFormData({ name: "", email: "", subject: "", message: "" }); // Reset form
           },
           (error) => {
@@ -182,16 +183,6 @@ const Contact = () => {
             >
               SEND MESSAGE
             </button>
-
-            {/* Success Message */}
-            {formSubmitted && (
-              <div className="mt-8 px-6 py-4 sm:px-8 sm:py-6 md:mt-10 md:px-12 md:py-8 lg:mt-12 lg:px-16 lg:py-10 text-xl font-semibold text-green-400 bg-green-900 bg-opacity-10 rounded-lg shadow-md">
-                <p className="text-center leading-relaxed">
-                  Thank you for reaching out! Your message has been received.
-                  I’ll get back to you within 24 hours.
-                </p>
-              </div>
-            )}
           </form>
         </div>
       </section>

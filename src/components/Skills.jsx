@@ -59,7 +59,7 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className={` ${
+      className={`m-4  ${
         isDarkMode ? "bg-[#10172a] text-white" : "bg-transparent"
       } `}
     >
@@ -80,7 +80,7 @@ const Skills = () => {
         </h2>
 
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 ${
+          className={` grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 ${
             isDarkMode ? "text-white" : "text-gray-800"
           }`}
         >
