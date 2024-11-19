@@ -7,11 +7,25 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Expense-Tracker",
+      description:
+        "Expense Tracker web app offering online and offline tracking of categorized expenses and income. Provides detailed analysis by time period and category with a secure, well-structured database.",
+      image: "/images/expense.png",
+      link: "https://github.com/darshansatapara/expense-tracker",
+    },
+    {
       title: "Lumify-LEDServiceWebsite",
       description:
         "Fully responsive LED service website offering end-to-end solutions, including new LED fittings and maintenance services tailored to user requirements.",
-      image: "/images/blog.png",
+      image: "/images/lumify.png",
       link: "https://github.com/darshansatapara/Lumify-LEDServiceWebsite",
+    },
+    {
+      title: "Pepsi",
+      description:
+        "Mobile app for managing Pepsi business data, offering detailed analysis by year, month, week, and category. Built with React Native and Node.js.",
+      image: "/images/pepsi.png",
+      link: "https://github.com/darshansatapara/pepsi",
     },
     {
       title: "Portfolio Website",
@@ -21,26 +35,19 @@ const Projects = () => {
       link: "https://github.com/jayprajapati1904/portfolio",
     },
     {
-      title: "Pepsi",
+      title: "Sales Analysis",
       description:
-        "Mobile app for managing Pepsi business data, offering detailed analysis by year, month, week, and category. Built with React Native and Node.js.",
-      image: "/images/DashBoard.png",
-      link: "https://github.com/darshansatapara/pepsi",
-    },
-    {
-      title: "Expense-Tracker",
-      description:
-        "Expense Tracker web app offering online and offline tracking of categorized expenses and income. Provides detailed analysis by time period and category with a secure, well-structured database.",
-      image: "/images/sundown.png",
-      link: "https://github.com/darshansatapara/expense-tracker",
+        "A comprehensive sales analysis project leveraging Pandas, Matplotlib, and Power BI to visualize and interpret business performance trends effectively.",
+      image: "/images/data.png", // Ensure you have this image available
+      link: "https://github.com/darshansatapara/sales-analysis", // Replace with the actual link
     },
   ];
 
   return (
     <div
       id="projects"
-      className={` ${
-        isDarkMode ? "bg-[#10172a] text-white" : "bg-[#f9f9f9] text-gray-800"
+      className={`${
+        isDarkMode ? "bg-[#10172a] text-white" : "bg-transparent"
       } projects-container`}
     >
       <section>
@@ -50,9 +57,9 @@ const Projects = () => {
               isDarkMode ? "text-yellow-300" : "text-blue-600"
             }`}
           >
-            My <span className="text-green-300">Projects</span>
+            My <span className="text-gray-700">Projects</span>
           </h2>
-          <div className=" m-4 grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-20">
+          <div className="m-4 grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-20">
             {projects.map((project, index) => (
               <div
                 key={index}
@@ -63,11 +70,15 @@ const Projects = () => {
                 } p-6 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-90 hover:shadow-xl`}
               >
                 {project.image && (
-                  <div className="rounded-md">
+                  <div className="rounded-md overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className={`w-full h-48 rounded-md md:object-cover transition-transform duration-300 transform hover:scale-105 hover:shadow-lg ${
+                      className={`w-full rounded-md transition-transform duration-300 transform hover:scale-105 hover:shadow-lg ${
+                        project.title === "Pepsi"
+                          ? "h-64 md:h-80 object-cover"
+                          : "h-48 md:h-64 object-contain"
+                      } ${
                         isDarkMode
                           ? "filter brightness-75"
                           : "filter brightness-100"
@@ -118,7 +129,7 @@ const Projects = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Explore More project on
+            Explore More projects on
             <FaGithub className="ml-2 w-5 h-5" />
           </a>
         </div>

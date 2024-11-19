@@ -59,9 +59,9 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className={`skills-container m-5 ${
-        isDarkMode ? "bg-[#10172a] text-white" : "bg-white text-gray-800"
-      }`}
+      className={` ${
+        isDarkMode ? "bg-[#10172a] text-white" : "bg-transparent"
+      } `}
     >
       <section>
         <h2
@@ -72,7 +72,7 @@ const Skills = () => {
           My{" "}
           <span
             className={`ml-2 ${
-              isDarkMode ? "text-yellow-300" : "text-blue-600"
+              isDarkMode ? "text-yellow-300" : "text-gray-700"
             } font-bold`}
           >
             Skills
