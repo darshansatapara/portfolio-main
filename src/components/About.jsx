@@ -34,7 +34,7 @@ const About = () => {
                   isDarkMode ? "text-yellow-300 font-bold" : "text-blue-500"
                 }`}
               >
-                Jay Prajapati
+                Darshan Satapara
               </span>
             </h1>
             <div
